@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="car")
+@Table(name = "car")
 public class Car extends Auditable {
     @ManyToOne
     private Color color;

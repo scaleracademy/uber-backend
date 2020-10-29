@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="paymentgateway")
-public class PaymentGateway extends Auditable{
+@Table(name = "paymentgateway")
+public class PaymentGateway extends Auditable {
     private String name;
 }

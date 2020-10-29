@@ -12,8 +12,8 @@ import javax.persistence.Table;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="color")
-public class Color extends Auditable{
+@Table(name = "color")
+public class Color extends Auditable {
     @Column(unique = true, nullable = false)
     private String name;
 }

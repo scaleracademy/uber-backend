@@ -11,9 +11,8 @@ import javax.persistence.Table;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="review")
+@Table(name = "review")
 public class Review extends Auditable {
     private Integer ratingOutOfFive;
-
     private String note;
 }

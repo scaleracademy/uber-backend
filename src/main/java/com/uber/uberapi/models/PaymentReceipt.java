@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="paymentreceipt")
+@Table(name = "paymentreceipt")
 public class PaymentReceipt extends Auditable {
     private Double amount;
     @ManyToOne

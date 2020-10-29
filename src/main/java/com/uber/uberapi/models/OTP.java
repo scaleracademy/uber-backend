@@ -11,8 +11,8 @@ import javax.persistence.Table;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="otp")
-public class OTP extends Auditable{
+@Table(name = "otp")
+public class OTP extends Auditable {
     private String code;
     private String sentToNumber;
 }
