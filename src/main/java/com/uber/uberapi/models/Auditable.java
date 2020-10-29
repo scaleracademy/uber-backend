@@ -29,21 +29,20 @@ public abstract class Auditable implements Serializable {
     private Date updatedAt;
 
     @Override
-    public int hashCode() {
-        return id == null ? 0 : id.hashCode();
+    public boolean equals(Object o) {
+        if (this == o) return true; // same object
+        // check the class of both
+        if (o == null || getClass() != o.getClass()) return false;
+        // cast to auditable
+        Auditable auditable = (Auditable) o;
+        // compare the ids
+        if (id == null || auditable.id == null) return false;
+        return id.equals(auditable.id);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true; // same memory address
-        if (obj instanceof Auditable) {
-            Auditable auditableObj = (Auditable) obj;
-            if (id == null && obj == null) return true;
-            if (id == null || obj == null) return false;
-            return id == ((Auditable) obj).id;
-        } else {
-            return super.equals(obj);
-        }
+    public int hashCode() {
+        return id == null ? 0 : id.hashCode();
     }
 }
 

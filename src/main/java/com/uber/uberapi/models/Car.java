@@ -11,7 +11,9 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "car")
+@Table(name = "car", indexes = {
+        @Index(columnList = "driver_id", unique = true)
+})
 public class Car extends Auditable {
     @ManyToOne
     private Color color;

@@ -12,8 +12,12 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "driver")
+@Table(name = "driver", indexes = {
+        @Index(columnList = "account_id", unique = true),
+})
 public class Driver extends Auditable {
+    private String picUrl; // image location - Amazon S3
+
     @OneToOne
     private Account account;
 
