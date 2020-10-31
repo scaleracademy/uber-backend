@@ -24,7 +24,8 @@ public class SimpleDriverMatchingService implements DriverMatchingService {
 
     @Override
     public void assignDriver(Booking booking) {
-
+        // find the drivers
+        // notify the drivers
     }
 
     public static void main(String[] args) {

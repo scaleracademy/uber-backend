@@ -23,6 +23,8 @@ public class DefaultBookingService implements BookingService {
         if (booking.getStartTime().after(new Date())) {
             booking.setBookingStatus(BookingStatus.SCHEDULED);
             {
+                // office-boy
+                // start an async process that will process the booking
                 // producer
                 // use a task queue to push this task
                 schedulingService.schedule(booking);
@@ -31,6 +33,8 @@ public class DefaultBookingService implements BookingService {
             booking.setBookingStatus(BookingStatus.ASSIGNING_DRIVER);
             otpService.sendRideStartOTP(booking.getRideStartOTP());
             {
+                // office-boy
+                // start an async process that will process the booking
                 // producer
                 // use a task queue to push this task
                 driverMatchingService.assignDriver(booking);
@@ -40,7 +44,7 @@ public class DefaultBookingService implements BookingService {
 
     @Override
     public void acceptBooking(Driver driver, Booking booking) {
-
+        // notify the passenger
     }
 
     @Override

@@ -73,6 +73,12 @@ public class PassengerController {
         Passenger passenger = getPassengerFromId(passengerId);
         return getPassengerBookingFromId(bookingId, passenger);
     }
+    // passengers/20/bookings
+    // Prime, Taj Mahal, Red Fort
+    // click the schedule button
+    // this controller just saves the booking details
+    // it responds back - success
+    // sitting on the window
 
     @PostMapping("{passengerId}/bookings/")
     public void requestBooking(@RequestParam(name = "passengerId") Long passengerId,
@@ -80,7 +86,9 @@ public class PassengerController {
         Passenger passenger = getPassengerFromId(passengerId);
         Booking booking = Booking.builder()
                 .build();
+
         bookingService.createBooking(booking);
+
         bookingRepository.save(booking);
         passengerRepository.save(passenger);
     }
