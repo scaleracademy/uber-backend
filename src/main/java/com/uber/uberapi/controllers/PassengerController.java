@@ -1,6 +1,7 @@
 package com.uber.uberapi.controllers;
 
 import com.uber.uberapi.exceptions.InvalidBookingException;
+import com.uber.uberapi.exceptions.InvalidPassengerException;
 import com.uber.uberapi.models.Booking;
 import com.uber.uberapi.models.Passenger;
 import com.uber.uberapi.models.Review;

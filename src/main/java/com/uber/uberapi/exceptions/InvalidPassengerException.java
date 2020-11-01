@@ -1,6 +1,4 @@
-package com.uber.uberapi.controllers;
-
-import com.uber.uberapi.exceptions.UberException;
+package com.uber.uberapi.exceptions;
 
 public class InvalidPassengerException extends UberException {
     /**

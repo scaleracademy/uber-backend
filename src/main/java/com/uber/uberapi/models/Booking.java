@@ -52,12 +52,12 @@ public class Booking extends Auditable {
 
     @OneToMany
     @JoinTable(
-            name="booking_route",
-            joinColumns = @JoinColumn(name="booking_id"),
-            inverseJoinColumns = @JoinColumn(name="exact_location_id"),
+            name = "booking_route",
+            joinColumns = @JoinColumn(name = "booking_id"),
+            inverseJoinColumns = @JoinColumn(name = "exact_location_id"),
             indexes = {@Index(columnList = "booking_id")}
     )
-    @OrderColumn(name="location_index")
+    @OrderColumn(name = "location_index")
     private List<ExactLocation> route = new ArrayList<>();
     // ordered list
     // booking_route -> booking_id, location_index, exact_location_id  // primary key (booking_id, location_index)

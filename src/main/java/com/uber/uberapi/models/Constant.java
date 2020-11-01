@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "constant")
-public class Constant extends Auditable{
+public class Constant extends Auditable {
     private String name;
     private String value;
 

@@ -7,6 +7,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class SimpleDriverMatchingService implements DriverMatchingService {
+    public static void main(String[] args) {
+        // consumer
+        // for each request
+        // call the appropriate method
+    }
+
     @Override
     public void acceptBooking(Driver driver, Booking booking) {
 
@@ -26,11 +32,5 @@ public class SimpleDriverMatchingService implements DriverMatchingService {
     public void assignDriver(Booking booking) {
         // find the drivers
         // notify the drivers
-    }
-
-    public static void main(String[] args) {
-        // consumer
-        // for each request
-        // call the appropriate method
     }
 }
