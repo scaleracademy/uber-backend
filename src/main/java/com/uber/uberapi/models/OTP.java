@@ -16,7 +16,14 @@ public class OTP extends Auditable {
     private String code;
     private String sentToNumber;
 
-    public boolean validateEnteredOTP(OTP otp, Long expiryMinutes) {
+    public static OTP make(String phoneNumber) {
+        return OTP.builder()
+                .code("0000") // random number generator
+                .sentToNumber(phoneNumber)
+                .build();
+    }
+
+    public boolean validateEnteredOTP(OTP otp, Integer expiryMinutes) {
         if (!code.equals(otp.getCode())) {
             return false;
         }

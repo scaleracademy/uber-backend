@@ -1,4 +1,7 @@
 package com.uber.uberapi.services;
 
-public interface ETAService {
+import org.springframework.stereotype.Service;
+
+@Service
+public class ETAService {
 }
