@@ -7,6 +7,7 @@ import com.uber.uberapi.repositories.DriverRepository;
 import com.uber.uberapi.repositories.PassengerRepository;
 import com.uber.uberapi.services.messagequeue.MessageQueue;
 import com.uber.uberapi.services.notification.NotificationService;
+import com.uber.uberapi.services.otp.OTPService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

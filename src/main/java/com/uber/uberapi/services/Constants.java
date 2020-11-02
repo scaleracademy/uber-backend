@@ -9,11 +9,9 @@ import java.util.Map;
 
 @Service
 public class Constants {
-    final DBConstantRepository dbConstantRepository;
-
-    private final Map<String, String> constants = new HashMap<>();
-
     private static final Integer TEN_MINUTES = 60 * 10 * 1000;
+    final DBConstantRepository dbConstantRepository;
+    private final Map<String, String> constants = new HashMap<>();
 
     public Constants(DBConstantRepository dbConstantRepository) {
         this.dbConstantRepository = dbConstantRepository;

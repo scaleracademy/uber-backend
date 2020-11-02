@@ -1,4 +1,4 @@
-package com.uber.uberapi.services;
+package com.uber.uberapi.services.otp;
 
 import com.uber.uberapi.models.OTP;
 
