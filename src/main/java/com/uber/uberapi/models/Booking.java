@@ -26,7 +26,7 @@ public class Booking extends Auditable {
     private Driver driver;
 
     @ManyToMany(cascade = CascadeType.PERSIST)
-    private Set<Driver> notifiedDrivers = new HashSet<>();
+    private Set<Driver> notifiedDrivers = new HashSet<>(); // store which drivers can potentially accept this booking
 
     @Enumerated(value = EnumType.STRING)
     private BookingType bookingType;
@@ -40,7 +40,7 @@ public class Booking extends Auditable {
     private Review reviewByDriver;
 
     @OneToOne
-    private PaymentReceipt paymentReceipt;
+    private PaymentReceipt paymentReceipt; // todo: add payment services
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinTable(
@@ -51,6 +51,8 @@ public class Booking extends Auditable {
     )
     @OrderColumn(name = "location_index")
     private List<ExactLocation> route = new ArrayList<>();
+    // every booking has a list of locations (route)
+    // one to many mapping
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinTable(
@@ -72,12 +74,12 @@ public class Booking extends Auditable {
     private Date endTime; // actual end time
 
     @Temporal(value = TemporalType.TIMESTAMP)
-    private Date expectedCompletionTime;
+    private Date expectedCompletionTime; // filled by the location Tracking service
 
-    private Long totalDistanceMeters;
+    private Long totalDistanceMeters; // also be tracked by the location tracking service
 
     @OneToOne
-    private OTP rideStartOTP;
+    private OTP rideStartOTP; // a cron job deleted otps of completed rides
 
     public void startRide(OTP otp, int rideStartOTPExpiryMinutes) {
         if (!bookingStatus.equals(BookingStatus.CAB_ARRIVED)) {
@@ -85,6 +87,8 @@ public class Booking extends Auditable {
         }
         if (!rideStartOTP.validateEnteredOTP(otp, rideStartOTPExpiryMinutes))
             throw new InvalidOTPException();
+        startTime = new Date();
+        passenger.setActiveBooking(this);
         bookingStatus = BookingStatus.IN_RIDE;
     }
 
@@ -93,6 +97,8 @@ public class Booking extends Auditable {
             throw new InvalidActionForBookingStateException("The ride hasn't started yet");
         }
         driver.setActiveBooking(null);
+        endTime = new Date();
+        passenger.setActiveBooking(null);
         bookingStatus = BookingStatus.COMPLETED;
     }
 

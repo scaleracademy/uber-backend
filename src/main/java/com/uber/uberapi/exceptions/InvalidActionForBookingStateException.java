@@ -1,6 +1,6 @@
 package com.uber.uberapi.exceptions;
 
-public class InvalidActionForBookingStateException extends UberException {
+public class InvalidActionForBookingStateException extends BookingException {
     /**
      * Constructs a new runtime exception with the specified detail message.
      * The cause is not initialized, and may subsequently be initialized by a

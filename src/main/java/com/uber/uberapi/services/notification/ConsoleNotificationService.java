@@ -9,3 +9,6 @@ public class ConsoleNotificationService implements NotificationService {
         System.out.printf("Notification for %s: %s", phoneNumber, message);
     }
 }
+
+// doing dev on local machine
+// deploy to prod, you will use different notification

@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.awt.print.Book;
 
 @Entity
 @Setter
@@ -15,6 +16,10 @@ import javax.persistence.Table;
 public class ExactLocation extends Auditable {
     private Double latitude;
     private Double longitude;
+
+    // another service, gives the elevation based on lat, long
+    // google, microsoft, apple
+    // geolocation, spatial, maps
 
     public double distanceKm(ExactLocation other) {
         final Double R = 6371e3; // metres

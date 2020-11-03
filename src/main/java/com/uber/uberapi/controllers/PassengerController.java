@@ -7,7 +7,6 @@ import com.uber.uberapi.repositories.BookingRepository;
 import com.uber.uberapi.repositories.PassengerRepository;
 import com.uber.uberapi.repositories.ReviewRepository;
 import com.uber.uberapi.services.BookingService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -19,14 +18,17 @@ import java.util.Optional;
 public class PassengerController {
     // handle all operations for passenger
 
-    @Autowired
-    PassengerRepository passengerRepository;
-    @Autowired
-    BookingRepository bookingRepository;
-    @Autowired
-    BookingService bookingService;
-    @Autowired
-    ReviewRepository reviewRepository;
+    final PassengerRepository passengerRepository;
+    final BookingRepository bookingRepository;
+    final BookingService bookingService;
+    final ReviewRepository reviewRepository;
+
+    public PassengerController(PassengerRepository passengerRepository, BookingRepository bookingRepository, BookingService bookingService, ReviewRepository reviewRepository) {
+        this.passengerRepository = passengerRepository;
+        this.bookingRepository = bookingRepository;
+        this.bookingService = bookingService;
+        this.reviewRepository = reviewRepository;
+    }
 
     // all endpoints that the passenger can use
     public Passenger getPassengerFromId(Long passengerId) {
@@ -117,6 +119,18 @@ public class PassengerController {
         });
         bookingService.updateRoute(booking, route);
     }
+
+    // passenger requests booking
+    // saved to db
+    // message sent to drivermatching service
+    // consume the message
+    // find the drivers
+    // if none are available
+    // passenger will be notified
+    // passenger might retry to find drivers
+
+    // restaurant - waiter analogy
+    // Controller = waiters
 
     @PostMapping("{passengerId}/bookings/{bookingId}")
     public void retryBooking(@PathVariable(name = "passengerId") Long passengerId,

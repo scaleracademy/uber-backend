@@ -14,6 +14,8 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @Table(name = "namedlocation")
 public class NamedLocation extends Auditable {
+    // search/autocomplete service
+
     @OneToOne
     private ExactLocation exactLocation;
 

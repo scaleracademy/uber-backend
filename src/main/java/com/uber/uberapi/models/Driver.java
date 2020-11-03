@@ -10,6 +10,16 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+// Driver is a special account - not inheritance
+// Composition - Driver has an account
+// Passenger has an account
+// modeled as inheritance
+// table-per-class
+// single-table
+// no-parent-table
+// join-table
+
+
 @Entity
 @Setter
 @Getter
@@ -26,6 +36,9 @@ public class Driver extends Auditable {
     private Gender gender;
 
     private String name;
+
+    @OneToOne
+    private Review avgRating; // will be updated by a nightly cron job
 
     @OneToOne(mappedBy = "driver")
     private Car car;

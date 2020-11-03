@@ -35,7 +35,7 @@ public abstract class Auditable implements Serializable {
     @Column(updatable = false)
     @Temporal(TemporalType.TIMESTAMP)  // Jpa
     @CreatedDate // hibernate
-    private Date createAt; // whenever the row is created - automatically set this value
+    private Date createdAt; // whenever the row is created - automatically set this value
 
     @Temporal(TemporalType.TIMESTAMP)
     @LastModifiedDate // hibernate

@@ -5,5 +5,4 @@ public class AuthController {
     // login, logout - session based
     // jwt based auth
     // password reset
-
 }

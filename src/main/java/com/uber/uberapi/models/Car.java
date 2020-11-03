@@ -14,7 +14,7 @@ import javax.persistence.*;
 @Table(name = "car")
 public class Car extends Auditable {
     @ManyToOne
-    private Color color;
+    private Color color; // entity
 
     private String plateNumber;
 

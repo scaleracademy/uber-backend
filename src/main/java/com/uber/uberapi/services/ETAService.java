@@ -9,6 +9,12 @@ public class ETAService {
     @Autowired
     private Constants constants;
 
+    // strategy pattern
+    // ETA based on traffic
+    // ETA based on festivals/events
+    // ETA based on weather
+    // Chain of responsibility
+
     public int getETAMinutes(ExactLocation lastKnownLocation, ExactLocation pickup) {
         return (int) (60.0 * lastKnownLocation.distanceKm(pickup) / constants.getDefaultETASpeedKmph());
     }

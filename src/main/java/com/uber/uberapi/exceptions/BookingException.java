@@ -1,6 +1,6 @@
 package com.uber.uberapi.exceptions;
 
-public class InvalidBookingException extends BookingException {
+public abstract class BookingException extends UberException {
     /**
      * Constructs a new runtime exception with the specified detail message.
      * The cause is not initialized, and may subsequently be initialized by a
@@ -9,7 +9,7 @@ public class InvalidBookingException extends BookingException {
      * @param message the detail message. The detail message is saved for
      *                later retrieval by the {@link #getMessage()} method.
      */
-    public InvalidBookingException(String message) {
+    public BookingException(String message) {
         super(message);
     }
 }
