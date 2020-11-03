@@ -1,11 +1,12 @@
 package com.uber.uberapi.services;
 
 import com.uber.uberapi.models.Booking;
-import com.uber.uberapi.models.DateUtils;
 import com.uber.uberapi.repositories.BookingRepository;
+import com.uber.uberapi.services.locationtracking.LocationTrackingService;
 import com.uber.uberapi.services.messagequeue.MQMessage;
 import com.uber.uberapi.services.messagequeue.MessageQueue;
 import com.uber.uberapi.services.notification.NotificationService;
+import com.uber.uberapi.utils.DateUtils;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

@@ -1,4 +1,4 @@
-package com.uber.uberapi.models;
+package com.uber.uberapi.utils;
 
 import java.util.Calendar;
 import java.util.Date;

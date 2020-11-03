@@ -62,7 +62,6 @@ public class Booking extends Auditable {
     @OrderColumn(name = "location_index")
     private List<ExactLocation> completedRoute = new ArrayList<>();
 
-
     @Temporal(value = TemporalType.TIMESTAMP)
     private Date scheduledTime;
 

@@ -5,6 +5,7 @@ import com.uber.uberapi.models.*;
 import com.uber.uberapi.repositories.BookingRepository;
 import com.uber.uberapi.repositories.DriverRepository;
 import com.uber.uberapi.repositories.PassengerRepository;
+import com.uber.uberapi.services.drivermatching.DriverMatchingService;
 import com.uber.uberapi.services.messagequeue.MessageQueue;
 import com.uber.uberapi.services.notification.NotificationService;
 import com.uber.uberapi.services.otp.OTPService;

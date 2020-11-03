@@ -1,6 +1,7 @@
 package com.uber.uberapi.models;
 
 import com.uber.uberapi.exceptions.UnapprovedDriverException;
+import com.uber.uberapi.utils.DateUtils;
 import lombok.*;
 
 import javax.persistence.*;

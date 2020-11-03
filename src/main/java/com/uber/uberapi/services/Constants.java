@@ -44,4 +44,28 @@ public class Constants {
     public Integer getBookingProcessBeforeTime() {
         return Integer.parseInt(constants.getOrDefault("bookingProcessBeforeTime", "900000"));
     }
+
+    public String getLocationTrackingTopicName() {
+        return constants.getOrDefault("locationTrackingTopicName", "locationTrackingTopic");
+    }
+
+    public double getMaxDistanceKmForDriverMatching() {
+        return Double.parseDouble(constants.getOrDefault("maxDistanceKmForDriverMatching", "2"));
+    }
+
+    public int getMaxDriverETAMinutes() {
+        return Integer.parseInt(constants.getOrDefault("maxDriverETAMinutes", "15"));
+    }
+
+    public boolean getIsETABasedFilterEnabled() {
+        return Boolean.parseBoolean(constants.getOrDefault("isETABasedFilterEnabled", "true"));
+    }
+
+    public boolean getIsGenderFilterEnabled() {
+        return Boolean.parseBoolean(constants.getOrDefault("isGenderFilterEnabled", "true"));
+    }
+
+    public double getDefaultETASpeedKmph() {
+        return Double.parseDouble(constants.getOrDefault("defaultETASpeedKmph", "30.0"));
+    }
 }
