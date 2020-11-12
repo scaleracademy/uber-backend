@@ -2,10 +2,7 @@ package com.uber.uberapi.models;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,10 +27,12 @@ public class Account extends Auditable {
     // add a unique constraint to the role_id column -> one to one relation  (you can have #roles entries)
     // add a unique constraint to the account_id column -> one role can be mapped to many accounts, but one account can only have one role
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
+    @Singular
     private List<Role> roles = new ArrayList<>();
     // talk the auth - Role based authentication
 }
+
 
 // Requirement analysis
 // what the basic requirements are

@@ -28,7 +28,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Table(name = "driver")
 public class Driver extends Auditable {
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Account account;
 
     private String phoneNumber;
@@ -40,7 +40,7 @@ public class Driver extends Auditable {
     @OneToOne
     private Review avgRating; // will be updated by a nightly cron job
 
-    @OneToOne(mappedBy = "driver")
+    @OneToOne(mappedBy = "driver", cascade = CascadeType.ALL)
     private Car car;
 
     private String licenseDetails;
